@@ -1,26 +1,25 @@
 .example-spacer {
-    flex: 1 1 auto;
-  }
-
-  .transparent-padding {
-    display: flex;
-    padding-top: 20px; /* Adjust padding as needed */
-    background-color: transparent;
-    margin: 10px;
-  }
-
-  .custom-toolbar {
-    background-color: #1c2b36; /* Change this to your desired color */
-    color: rgb(8, 6, 6); /* This changes the text color */
-}
-.name{
-    color: aliceblue;
+  flex: 1 1 auto;
 }
 
-.example-icon{
-    color: aliceblue;
+.transparent-padding {
+  display: flex;
+  padding-top: 20px; /* Adjust padding as needed */
+  background-color: transparent;
+  margin: 10px;
 }
 
+.custom-toolbar {
+  background-color: #1c2b36; /* Change this to your desired color */
+  color: rgb(8, 6, 6); /* This changes the text color */
+}
+.name {
+  color: aliceblue;
+}
+
+.example-icon {
+  color: aliceblue;
+}
 
 /*.header {
     width: 100%;

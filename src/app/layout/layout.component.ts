@@ -4,6 +4,7 @@ import { HeaderComponent } from '../components/header/header.component';
 import { SidenavComponent } from '../components/sidenav/sidenav.component';
 import { RouterOutlet } from '@angular/router';
 
+
 @Component({
   selector: 'app-layout',
   standalone: true,

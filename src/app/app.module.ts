@@ -1,31 +1,22 @@
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA  } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
-
-/*import {AppRoutingModule} from './app-routing.module';
-import { AppRouting } from './app.routing'; 
-import { AppComponent } from './app.component';
-import { HeaderComponent } from './components/header/header.component';
-import { SidenavComponent } from './components/sidenav/sidenav.component';
-import { HomeComponent } from './components/home/home.component';
-import { DashboardComponent} from './components/dashboard/dashboard.component'; */
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatSidenavModule} from '@angular/material/sidenav';
+import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatListModule } from '@angular/material/list';
 import { MatTooltipModule } from '@angular/material/tooltip';
-import {MatButtonModule} from '@angular/material/button';
+import { MatButtonModule } from '@angular/material/button';
 import { LoginComponent } from './login/login.component';
-
-
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [],
-  schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
-  
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+
   imports: [
     CommonModule,
     BrowserModule,
@@ -35,10 +26,12 @@ import { LoginComponent } from './login/login.component';
     MatMenuModule,
     MatIconModule,
     MatDividerModule,
-    MatListModule ,
-    MatTooltipModule, 
+    MatListModule,
+    MatTooltipModule,
     MatButtonModule,
-    LoginComponent
-  ]
+    LoginComponent,
+    FormsModule,
+    ReactiveFormsModule,
+  ],
 })
-export class AppModule { }
+export class AppModule {}
