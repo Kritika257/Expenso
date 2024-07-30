@@ -7,3 +7,11 @@ footer {
   bottom: 0;
   width: 100%;
 }
+.btn-outline {
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+.btn-outline:hover {
+  background-color: #1c2b36;
+  color: white;
+  border-color: #394f68;
+}

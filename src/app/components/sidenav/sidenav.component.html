@@ -36,8 +36,8 @@
           <span class="nav-text"> User Profile </span> 
         </a>
         <mat-divider></mat-divider>
-        <a mat-list-item (click)="adminClicked()" [ngClass]="{'collapsed': !isExpanded}" class="nav-item">
-          <mat-icon class="mat-icon">admin_panel_settings</mat-icon>
+        <a mat-list-item (click)="adminClicked()" [ngClass]="{'collapsed': !isExpanded}" class="admin-nav-item">
+          <mat-icon class="nav-icon">admin_panel_settings</mat-icon>
           <span class="nav-text">Admin View</span>
          <!-- <mat-icon class="nav-icon">keyboard_arrow_down</mat-icon> -->
         </a>
@@ -67,52 +67,11 @@
     </mat-nav-list>
 </mat-sidenav>
 
-<mat-sidenav-content>
+<mat-sidenav-content class="sidenav-content-bg">
   <a class="tog" mat-icon-button (click)="toggleSidebar()">
     <mat-icon>{{ isExpanded ? 'chevron_left' : 'chevron_right' }}</mat-icon>
   </a>
   <router-outlet></router-outlet>
 </mat-sidenav-content>
 </mat-sidenav-container>
-
-<!--<div class="sidebar" id="sidebar">
-  <div class="collapse-btn" id="collapseBtn">
-    <i class="fas fa-chevron-left"></i>
-  </div>
-  <a routerLinkActive="list-item-active"
-  routerLink="/dashboard" class="menu-item">
-    <i class="fas fa-tachometer-alt"></i>
-    <span>Dashboard</span>
-  </a>
-  <a routerLinkActive="list-item-active"
-  routerLink="/expense" class="menu-item">
-    <i class="fas fa-wallet"></i>
-    <span>Expenses</span>
-  </a>
-  <a routerLinkActive="list-item-active"
-  routerLink="/report" class="menu-item">
-    <i class="fas fa-file-alt"></i>
-    <span>Reports</span>
-  </a>
-  <a routerLinkActive="list-item-active"
-  routerLink="/analytics" class="menu-item">
-    <i class="fas fa-chart-line"></i>
-    <span>Analytics</span>
-  </a>
-  <a routerLinkActive="list-item-active"
-  routerLink="/settings" class="menu-item">
-    <i class="fas fa-cogs"></i>
-    <span>Settings</span>
-  </a>
-</div>
-<div class="content" id="content">
-  
-  <router-outlet></router-outlet>
-</div>
--->
-
-
-
-
-
 

@@ -28,8 +28,6 @@
     outline: none; /* Remove default outline */
   }
 
- 
-
   .login-class{
     color: white;
   }
@@ -40,4 +38,20 @@
 
   link-info{
     cursor: pointer !important;
+  }
+
+  .btn-primary {
+    background-color: #209e91; /* Cyan color */
+    border-color: #00bcd4; /* Border color */
+    color: white; /* Text color */
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+  }
+  
+  .btn-primary:hover {
+    background-color: #0097a7; /* Darker cyan for hover effect */
+    border-color: #0097a7; /* Darker border color */
+  }
+  
+  .btn-primary:focus, .btn-primary:active {
+    box-shadow: 0 0 0 0.2rem rgba(0, 188, 212, 0.25); /* Optional shadow effect */
   }
