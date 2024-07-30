@@ -6,6 +6,10 @@ import { AnalyticsComponent } from './components/analytics/analytics.component';
 import { SettingsComponent } from './components/settings/settings.component';
 import { LoginComponent } from './login/login.component';
 import { LayoutComponent } from './layout/layout.component';
+import { UsermanagementComponent } from './admin/usermanagement/usermanagement.component';
+import { AppReportsComponent } from './admin/app-reports/app-reports.component';
+import { AppOverviewComponent } from './admin/app-overview/app-overview.component';
+
 
 export const routes: Routes = [
   {
@@ -41,6 +45,18 @@ export const routes: Routes = [
         path: 'settings',
         component: SettingsComponent,
       },
+      {
+        path: 'admin/user-management',
+        component: UsermanagementComponent,
+      },
+      {
+        path: 'app-reports',
+        component: AppReportsComponent,
+      },
+      {
+        path: 'app-overview',
+        component: AppOverviewComponent,
+      }
     ],
   },
 ];

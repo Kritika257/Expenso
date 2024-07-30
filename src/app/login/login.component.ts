@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators, AbstractControl} from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
+
 @Component({
   selector: 'app-login',
   standalone: true,
@@ -18,9 +19,10 @@ export class LoginComponent {
   constructor() {
     this.userForm = new FormGroup({
       userName: new FormControl('', [
-        Validators.required,
+        Validators.required, 
         Validators.maxLength(8),
       ]),
+      companyname: new FormControl('', [Validators.required]),
       emailId: new FormControl('', [Validators.required, Validators.email]),
       password: new FormControl('', [
         Validators.required,
@@ -54,6 +56,7 @@ export class LoginComponent {
     userName: '',
     password: '',
     emailId: '',
+    companyname:'',
   };
 
   userLogin: any = {

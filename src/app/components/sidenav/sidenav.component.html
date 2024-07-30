@@ -1,89 +1,118 @@
 <mat-sidenav-container>
-  <mat-sidenav #sidenav mode="side" [opened]="isExpanded" class="sidenav">
+  <mat-sidenav #sidenav  mode="side" [opened]="isExpanded"  class="sidenav">
     <mat-nav-list>
-      <a
-        mat-list-item
-        routerLinkActive="list-item-active"
-        routerLink="/dashboard"
-        [ngClass]="{ collapsed: !isExpanded }"
-      >
-        <mat-icon>dashboard</mat-icon>
-        <span *ngIf="isExpanded"> Dashboard </span>
-      </a>
+       <!-- Default Menu Items -->
+       <ng-container *ngIf="!isAdmin">
+        <div class="matlist">
+          <a
+            mat-list-item
+            routerLinkActive="list-item-active"
+            routerLink="/dashboard"
+            [ngClass]="{'collapsed': !isExpanded}"
+            class="nav-item"
+          >
+            <mat-icon class="nav-icon">dashboard</mat-icon>
+            <span class="nav-text">Dashboard</span>
+          </a>
+        </div>
+     
+        <a mat-list-item routerLinkActive="list-item-active" routerLink="/expense" [ngClass]="{'collapsed': !isExpanded}" class="nav-item">
+          <mat-icon class="nav-icon">local_atm</mat-icon> 
+          <span class="nav-text"> Expense </span> 
+        </a>
+      
+        <a mat-list-item routerLinkActive="list-item-active" routerLink="/report" [ngClass]="{'collapsed': !isExpanded}" class="nav-item"> 
+          <mat-icon class="nav-icon">report</mat-icon>
+          <span class="nav-text"> Reports </span>
+        </a>
+      
+        <a mat-list-item routerLinkActive="list-item-active" routerLink="/analytics" [ngClass]="{'collapsed': !isExpanded}" class="nav-item"> 
+          <mat-icon class="nav-icon">table_chart_view</mat-icon> 
+          <span class="nav-text"> Analytics </span> 
+          </a>
+      
+        <a mat-list-item routerLinkActive="list-item-active" routerLink="/settings" [ngClass]="{'collapsed': !isExpanded}" class="nav-item"> 
+          <mat-icon class="nav-icon">account_circle</mat-icon> 
+          <span class="nav-text"> User Profile </span> 
+        </a>
+        <mat-divider></mat-divider>
+        <a mat-list-item (click)="adminClicked()" [ngClass]="{'collapsed': !isExpanded}" class="nav-item">
+          <mat-icon class="mat-icon">admin_panel_settings</mat-icon>
+          <span class="nav-text">Admin View</span>
+         <!-- <mat-icon class="nav-icon">keyboard_arrow_down</mat-icon> -->
+        </a>
+      </ng-container>
+      
+         <!-- Admin Menu Items -->
+      <ng-container *ngIf="isAdmin">
 
-      <a
-        mat-list-item
-        routerLinkActive="list-item-active"
-        routerLink="/expense"
-        [ngClass]="{ collapsed: !isExpanded }"
-      >
-        <mat-icon>local_atm</mat-icon>
-        <span *ngIf="isExpanded"> Expense </span>
-      </a>
-
-      <a
-        mat-list-item
-        routerLinkActive="list-item-active"
-        routerLink="/report"
-        [ngClass]="{ collapsed: !isExpanded }"
-      >
-        <mat-icon>report</mat-icon>
-        <span *ngIf="isExpanded"> Reports </span>
-      </a>
-
-      <a
-        mat-list-item
-        routerLinkActive="list-item-active"
-        routerLink="/analytics"
-        [ngClass]="{ collapsed: !isExpanded }"
-      >
-        <mat-icon>table_chart_view</mat-icon>
-        <span *ngIf="isExpanded"> Analytics </span>
-      </a>
-
-      <a
-        mat-list-item
-        routerLinkActive="list-item-active"
-        routerLink="/settings"
-        [ngClass]="{ collapsed: !isExpanded }"
-      >
-        <mat-icon>settings</mat-icon>
-        <span *ngIf="isExpanded"> Settings </span>
-      </a>
+        <a mat-list-item routerLink="/app-usermanagement" routerLinkActive="list-item-active" [ngClass]="{'collapsed': !isExpanded}" class="nav-item">
+          <mat-icon class="nav-icon">group</mat-icon>
+          <span class="nav-text">User Management</span>
+        </a>
+        <a mat-list-item routerLink="/app-app-reports" routerLinkActive="list-item-active" [ngClass]="{'collapsed': !isExpanded}" class="nav-item">
+          <mat-icon class="nav-icon">bar_chart</mat-icon>
+          <span class="nav-text">App Report</span>
+        </a>
+        <a mat-list-item routerLink="/app-app-overview" routerLinkActive="list-item-active" [ngClass]="{'collapsed': !isExpanded}" class="nav-item">
+          <mat-icon class="nav-icon">dashboard</mat-icon>
+          <span class="nav-text">App Overview</span>
+        </a>
+        <a mat-list-item (click)="adminClicked()" [ngClass]="{'collapsed': !isExpanded}" class="nav-item">
+          <mat-icon class="nav-icon">arrow_back</mat-icon>
+          <span class="nav-text">Back to User view</span>
+        </a>
+      </ng-container>
+      
     </mat-nav-list>
-  </mat-sidenav>
+</mat-sidenav>
 
-  <mat-sidenav-content>
-    <a class="tog" mat-icon-button (click)="toggleSidebar()">
-      <mat-icon>{{ isExpanded ? "chevron_left" : "chevron_right" }}</mat-icon>
-    </a>
-    <router-outlet></router-outlet>
-  </mat-sidenav-content>
+<mat-sidenav-content>
+  <a class="tog" mat-icon-button (click)="toggleSidebar()">
+    <mat-icon>{{ isExpanded ? 'chevron_left' : 'chevron_right' }}</mat-icon>
+  </a>
+  <router-outlet></router-outlet>
+</mat-sidenav-content>
 </mat-sidenav-container>
 
-<!--<mat-nav-list>
-    <div class="logo py-4">
-      <img src ="C:\Angular\Expenso\src\app\components\sidenav\Expenso.png" alt="Company Logo" />
-    </div>
-    <mat-divider></mat-divider>
-    <h3 matSubheader class="mt-2">Expenso</h3>
+<!--<div class="sidebar" id="sidebar">
+  <div class="collapse-btn" id="collapseBtn">
+    <i class="fas fa-chevron-left"></i>
+  </div>
+  <a routerLinkActive="list-item-active"
+  routerLink="/dashboard" class="menu-item">
+    <i class="fas fa-tachometer-alt"></i>
+    <span>Dashboard</span>
+  </a>
+  <a routerLinkActive="list-item-active"
+  routerLink="/expense" class="menu-item">
+    <i class="fas fa-wallet"></i>
+    <span>Expenses</span>
+  </a>
+  <a routerLinkActive="list-item-active"
+  routerLink="/report" class="menu-item">
+    <i class="fas fa-file-alt"></i>
+    <span>Reports</span>
+  </a>
+  <a routerLinkActive="list-item-active"
+  routerLink="/analytics" class="menu-item">
+    <i class="fas fa-chart-line"></i>
+    <span>Analytics</span>
+  </a>
+  <a routerLinkActive="list-item-active"
+  routerLink="/settings" class="menu-item">
+    <i class="fas fa-cogs"></i>
+    <span>Settings</span>
+  </a>
+</div>
+<div class="content" id="content">
   
-    <a mat-list-item routerLinkActive="list-item-active" routerLink="/home">
-      <mat-icon>home</mat-icon> Home
-    </a>
-    <a mat-list-item routerLinkActive="list-item-active" routerLink="/dashboard">
-      <mat-icon>dashboard</mat-icon> Dashboard
-    </a>
-    <a mat-list-item routerLinkActive="list-item-active" routerLink="/expense">
-      <mat-icon>local_atm</mat-icon> Expense 
-    </a>
-    <a mat-list-item routerLinkActive="list-item-active" routerLink="/report"> 
-      <mat-icon>report</mat-icon> Reports 
-    </a>
-    <a mat-list-item routerLinkActive="list-item-active" routerLink="/analytics"> 
-      <mat-icon>table_chart_view</mat-icon> Analytics 
-    </a>
-    <a mat-list-item routerLinkActive="list-item-active" routerLink="/settings"> 
-      <mat-icon>settings</mat-icon> Settings 
-    </a>
-  </mat-nav-list> -->
+  <router-outlet></router-outlet>
+</div>
+-->
+
+
+
+
+
+

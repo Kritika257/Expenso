@@ -1,31 +1,9 @@
-.footer {
-  background-color: #333;
+footer {
+  background-color: #1c2b36;
   color: #fff;
-  padding: 10px;
   text-align: center;
-}
-
-.footer-content {
-  max-width: 1000px;
-  margin: 0 auto;
-  height: 60px;
-}
-
-.footer-links {
-  list-style-type: none;
-  padding: 0;
-}
-
-.footer-links li {
-  display: inline;
-  margin: 0 10px;
-}
-
-.footer-links a {
-  color: #fff;
-  text-decoration: none;
-}
-
-.footer-links a:hover {
-  text-decoration: underline;
+  padding: 10px;
+  position: relative;
+  bottom: 0;
+  width: 100%;
 }
