@@ -1,7 +1,7 @@
 <mat-sidenav-container>
   <mat-sidenav #sidenav  mode="side" [opened]="isExpanded"  class="sidenav">
     <mat-nav-list>
-       <!-- Default Menu Items -->
+       <!-- Default Items -->
        <ng-container *ngIf="!isAdmin">
         <div class="matlist">
           <a
@@ -9,13 +9,12 @@
             routerLinkActive="list-item-active"
             routerLink="/dashboard"
             [ngClass]="{'collapsed': !isExpanded}"
-            class="nav-item"
-          >
+            class="nav-item">
             <mat-icon class="nav-icon">dashboard</mat-icon>
             <span class="nav-text">Dashboard</span>
           </a>
         </div>
-     
+        
         <a mat-list-item routerLinkActive="list-item-active" routerLink="/expense" [ngClass]="{'collapsed': !isExpanded}" class="nav-item">
           <mat-icon class="nav-icon">local_atm</mat-icon> 
           <span class="nav-text"> Expense </span> 
@@ -26,15 +25,11 @@
           <span class="nav-text"> Reports </span>
         </a>
       
-        <a mat-list-item routerLinkActive="list-item-active" routerLink="/analytics" [ngClass]="{'collapsed': !isExpanded}" class="nav-item"> 
-          <mat-icon class="nav-icon">table_chart_view</mat-icon> 
-          <span class="nav-text"> Analytics </span> 
-          </a>
-      
         <a mat-list-item routerLinkActive="list-item-active" routerLink="/settings" [ngClass]="{'collapsed': !isExpanded}" class="nav-item"> 
           <mat-icon class="nav-icon">account_circle</mat-icon> 
           <span class="nav-text"> User Profile </span> 
         </a>
+
         <mat-divider></mat-divider>
         <a mat-list-item (click)="adminClicked()" [ngClass]="{'collapsed': !isExpanded}" class="admin-nav-item">
           <mat-icon class="nav-icon">admin_panel_settings</mat-icon>
@@ -68,6 +63,7 @@
 </mat-sidenav>
 
 <mat-sidenav-content class="sidenav-content-bg">
+  <!--Toggle Button-->
   <a class="tog" mat-icon-button (click)="toggleSidebar()">
     <mat-icon>{{ isExpanded ? 'chevron_left' : 'chevron_right' }}</mat-icon>
   </a>

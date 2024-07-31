@@ -1,0 +1,42 @@
+.header-box {
+    background-color: #2f455b;
+    width: 50%; /* Light border color */
+    border-radius: 8px; /* Rounded corners */
+    padding: 10px; /* Padding around the content */
+    box-shadow: 10px -10px teal; /* Subtle shadow */
+    margin:  auto;
+    margin-bottom: 25px;  /* Space below the box */
+  }
+  .header-box h3 {
+    color: #f7fafa; /* Dark text color */
+    margin-bottom: 0; /* Remove bottom margin */
+  }
+
+  .card {
+    border: 1px solid #1a4c3c;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(22, 26, 71, 0.1);
+  }
+  
+  .card-body {
+    padding: 20px;
+  }
+  
+  .card-title {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    text-align: center; /* Center-aligns title */
+  }
+  
+  .card-text {
+    color: #555;
+    font-size: 1rem;
+  }
+
+  .card-icon {
+    font-size: 2rem;
+    color: #2f455b; /* Or your preferred color */
+  }
+
+  
