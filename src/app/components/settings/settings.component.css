@@ -28,16 +28,18 @@
       border: 1px solid #c6d3e0; /* Light grey border */
       border-radius: 2; /* No border radius */
       padding: 5px; /* Add padding for better spacing */
+      box-shadow: 0 5px 0 rgba(0, 0, 0, 0.1);
+      
     }
     .form-control:focus {
-        border-bottom: 2px solid teal; /* Change underline color on focus */
+        border-bottom: 4px solid teal; /* Change underline color on focus */
         box-shadow: 0 1px 0 0 rgba(30, 144, 255, 0.5); /* Add a subtle shadow below underline on focus */
         outline: none; /* Remove default outline */
     }
 
     .form-control::placeholder {
-        color: #2f455b; /* Placeholder color */
-        opacity: 1; /* Ensure placeholder color is fully opaque */
+        color: teal; /* Placeholder color */
+        
       }
       
   .btn-primary {
@@ -52,8 +54,45 @@
   .btn-primary:hover {
     background-color: #1c2834;
     border-color: #0056b3;
+    
   }
   
   .text-right {
     text-align: right !important;
   }
+
+  /*
+  .form-group .form-control {
+      width: 100%;
+      box-sizing: border-box;
+      letter-spacing: 1px;
+      border: 0;
+      padding: 5px 0 7px;
+      border: 1px solid 
+    transparent;
+      border-bottom-color: 
+    #a5d1ed;
+      transition: 0.4s;
+      background-color: 
+    #d2ffff;
+      height: 36px;
+    }
+    
+    .form-group .form-control:focus {
+      outline: none;
+      padding: 5px 14px 7px;
+      transition: 0.4s;
+    }
+    .form-group .form-control ~ .focus-border {
+      position: absolute;
+      height: 36px;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      transition: 0.4s;
+    }
+    .form-group .form-control:focus ~ .focus-border {
+      width: 100%;
+      transition: 0.4s;
+     
+    }*/

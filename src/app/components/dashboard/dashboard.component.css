@@ -13,10 +13,11 @@
   }
 
   .card {
-    border: 1px solid #1a4c3c;
+    background-color: #9ee3cd;
+    border: 0px solid #1a4c3c;
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 4px 6px rgba(22, 26, 71, 0.1);
+    box-shadow: 0 20px 12px rgba(22, 26, 71, 0.1);
   }
   
   .card-body {
@@ -36,7 +37,32 @@
 
   .card-icon {
     font-size: 2rem;
-    color: #2f455b; /* Or your preferred color */
+    color: #1c2936; /* Or your preferred color */
+    border: 0px solid #2d4452;
+    padding: 10px;
+    display: inline-block;
+    border-radius: 2px;
+    box-shadow: 0 20px 20px rgba(0, 0, 0, 0.1);
+    background-color: #cdf3e7;
   }
 
-  
+
+.chart-container {
+    width:20;
+    padding: 10px;
+    background-color: rgb(248, 250, 252);
+    box-shadow: 0 20px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 20px; 
+  }
+ 
+  .table-container{
+    background-color: #9ee3cd;
+    padding: 2px;
+    box-shadow: 0 20px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+  }
+
