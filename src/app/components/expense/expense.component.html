@@ -1,9 +1,83 @@
 <div class="container-fluid content">
 
-    <div class="info-box p-4 border rounded bg-light">
-        <!--<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">-->
-            <div class="header-box  text-center mb-3">
-                <h3 class="text-center">Expense</h3>
-                </div>
-    </div>
+    <div class="info-box p-4 border bg-light mt-1">
+                <p class="header-top">EXPENSE</p>
+                <form>
+
+                    <!-- Row 1: Date Field -->
+                    <div class="form-row justify-content-end mb-3">
+                        <div class="col mb-4 date-group">
+                            <label for="date">Date:</label>
+                            <input type="date" class="form-control date-input" id="date" ngModel [ngModel]="defaultDate" name= "Date">
+                        </div>
+                    </div>
+        
+                    <!-- Row 2: Employee Details -->
+                    <div class="form-row mb-4">
+                        <div class="col mb-4">
+                            <!--<label for="employeeName">Employee Name</label>-->
+                            <input type="text" class="form-control" id="employeeName" value="John Doe" placeholder="Employee Name" disabled>
+                        </div>
+                        <div class="col mb-4">
+                            <!--<label for="employeeId">Employee ID</label>-->
+                            <input type="text" class="form-control" id="employeeId" value="12345" placeholder="Employee ID" disabled>
+                        </div>
+                        <div class="col mb-4">
+                            <!--<label for="designation">Designation</label>-->
+                            <input type="text" class="form-control" id="designation" value="Software Engineer" placeholder="Employee Designation" disabled>
+                        </div>
+                    </div>
+        
+                    <!-- Row 3: Manager, Expense Type, Expense Amount -->
+                    <!-- Manager Dropdown-->
+                    <div class="form-row mb-4">
+                        <div class="col mb-4">
+                            <!--<label for="manager">Manager</label>-->
+                            <select class="form-control" id="manager" required>
+                                <option value="">Select Manager</option>
+                                <option value="1">Manager 1</option>
+                                <option value="2">Manager 2</option>
+                                <option value="3">Manager 3</option>
+                            </select>
+                        </div>
+
+                        <!--Expense Type-->
+                        <div class="col mb-4">
+                            <!--<label for="expenseType">Expense Type</label>-->
+                            <select class="form-control" id="expenseType" required>
+                                <option value="">Select Expense Type</option>
+                                <option value="travel">Travel</option>
+                                <option value="team activities">Team Activities</option>
+                                <option value="professional development">Professional Development</option>
+                                <option value="bills">Bills</option>
+                            </select>
+                        </div>
+
+                        <!--Expense Amount-->
+                        <div class="col mb-4">
+                            <!--<label for="expenseAmount">Expense Amount</label>-->
+                            <input type="number" class="form-control" id="expenseAmount" placeholder="Expense Amount" required>
+                        </div>
+                    </div>
+        
+                    <!-- Row 4: File Upload -->
+                    <div class="form-row mb-1">
+                        <div class="col receipt-grp">
+                            <label for="receipts">Upload Receipts</label>
+                            <div>
+                            <input type="file" class="form-control-file receipt-input" id="receipts" accept=".jpg,.png,.pdf"  required>
+                            </div>
+                    </div>
+                    </div>
+                
+        
+                    <!-- Row 5: Submit Button -->
+                    <div class="form-row mt-1">
+                        <div class="col-md-12 text-right">
+                            <button type="submit" class="btn btn-primary">Send for Approval</button>
+                        </div>
+                    </div>
+                </form>
+        </div>
 </div>
+

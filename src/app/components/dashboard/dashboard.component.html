@@ -1,16 +1,13 @@
 <div class="container-fluid content">
-    <div class="info-box p-4 border rounded bg-light">
-    <!--<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">-->
-        <div class="header-box  text-center mb-3">
-            <h3 class="text-center">Dashboard</h3>
+    <div class="info-box p-4 border bg-light mt-1">
+        <div class="header-box">
+            <p class="header-top">DASHBOARD</p>
             </div>
-    
-
-    <div class="row mt-5">
-        <div class="col-md-4 mb-3">
+    <div class="row mt-2">
+        <div class="col-md-4 mb-2">
             <div class="card">
                 <div class="card-body d-flex align-items-center">
-                    <i class="fas fa-users card-icon me-3"></i>
+                    <i class="fas fa-users icon-1 card-icon me-3"></i>
                     <div>
                     <h5 class="card-title">Used Budget</h5>
                     <p class="card-text">1,234</p>
@@ -18,10 +15,10 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-4 mb-3">
+        <div class="col-md-4 mb-2">
             <div class="card">
               <div class="card-body d-flex align-items-center">
-                <i class="fas fa-chart-line card-icon me-3"></i>
+                <i class="fas fa-chart-line icon-2 card-icon me-3"></i>
                 <div>
                   <h5 class="card-title">Recent Expenses</h5>
                   <p class="card-text">$12,345</p>
@@ -29,10 +26,10 @@
               </div>
             </div>
           </div>
-        <div class="col-md-4 mb-3">
+        <div class="col-md-4 mb-2">
             <div class="card">
                 <div class="card-body d-flex align-items-center">
-                    <i class="fas fa-clock card-icon me-3"></i>
+                    <i class="fas fa-clock icon-3 card-icon me-3"></i>
                     <div>
                     <h5 class="card-title">Pending Approvals</h5>
                     <p class="card-text">567</p>
@@ -41,19 +38,16 @@
             </div>
         </div>
     </div>
-
-    <div class="row  d-flex  mt-5">
-        <div class="col-md-6 chart-container">
-            <div class="donut">
+    <div class="row chart mt-5 mb-5 ">
+        <div class="col-md-6 chart-container1">
           <canvas id="donutChart" baseChart
           [type]="'doughnut'"
           [data]="data1"
           [options]="chartOptions1">
         </canvas>
         </div>
-        </div>
+        
         <div class="col-md-6 chart-container">
-            
           <canvas id="stackedBarChart" baseChart
           [type]="'bar'"
           [data]="data2"
@@ -61,7 +55,8 @@
           ></canvas>
           </div>
       </div>
-      <div class="table-container mt-5">
+
+      <div class="table-container mt-3">
     <h5 class="text-center mt-2 text-bold"> Employee Status </h5>
     <div class="table-responsive">
         <table class="table table-hover">
@@ -72,6 +67,7 @@
                     <th>Salary</th>
                     <th>Expenses</th>
                     <th>Pending</th>
+                    <th>Pending Approvals</th>
                 </tr>
             </thead>
             <tbody>
@@ -81,6 +77,7 @@
                     <td>1,001</td>
                     <td>43</td>
                     <td>-26</td>
+                    <td>1</td>
                 </tr>
                 <tr>
                     <td>2</td>
@@ -88,6 +85,7 @@
                     <td>1,002</td>
                     <td>23</td>
                     <td>-8</td>
+                    <td>2</td>
                 </tr>
                 <tr>
                     <td>3</td>
@@ -95,6 +93,7 @@
                     <td>1,003</td>
                     <td>67</td>
                     <td>-45</td>
+                    <td>4</td>
                 </tr>
                 <tr>
                     <td>4</td>
@@ -102,6 +101,7 @@
                     <td>1,004</td>
                     <td>59</td>
                     <td>-9</td>
+                    <td>3</td>
                 </tr>
             </tbody>
         </table>
