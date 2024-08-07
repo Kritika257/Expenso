@@ -29,6 +29,6 @@ export class SidenavComponent  {
 
   adminClicked(): void {
     this.isAdmin = !this.isAdmin;  // Toggle between admin view and default view
-    this.router.navigate(['/admin/app-usermanagement']);
+    this.router.navigate(['/usermanagement']);
   }
 }

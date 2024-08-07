@@ -1,10 +1,16 @@
-import { Component,  OnInit  } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 
+interface Expense {
+  empId: number;
+  expenseType: string;
+  receipt: string | null;
+  amount: number;
+  status: string;
+}
 
 @Component({
   selector: 'app-report',
@@ -13,45 +19,22 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './report.component.html',
   styleUrl: './report.component.css'
 })
-export class ReportComponent implements OnInit {
-    expenseForm: FormGroup;
-    expenseTypes = ['Travel', 'Team Activities','Professional Development','Bills'];
-    approveStatuses = ['Pending', 'Manager', 'Approved', 'Rejected'];
-    receiptName: string | null = null;
-  
-    constructor(private fb: FormBuilder, private router: Router) {
-      this.expenseForm = this.fb.group({
-        expenseType: [{ value: '' }],
-        amount: [{ value: '' }],
-        approveStatus: [{ value: '' }]
-      });
-    }
-    // , disabled: true
-  
-    ngOnInit(): void {
-      // Initialize form with default values if necessary
-      this.expenseForm.patchValue({
-        expenseType: this.expenseTypes[0],
-        amount: '100',
-        approveStatus: this.approveStatuses[0]
-      });
-    }
-  
-    onFileChange(event: any): void {
-      const file = event.target.files[0];
-      if (file) {
-        this.receiptName = file.name;
-      }
-    }
-  
-    editExpense(): void {
-      // Navigate to another component, e.g., an edit page
-      this.router.navigate(['/expense']);
-    }
-  
-    deleteExpense(): void {
-      // Implement delete functionality
-      console.log('Delete expense');
-    }
+export class ReportComponent {
+  expenses: Expense[] = [
+    { empId: 1, expenseType: 'Travel', receipt: null, amount: 150, status: 'Admin Approved' },
+    { empId: 2, expenseType: 'Office Supplies', receipt: 'receipt1.pdf', amount: 75, status: 'Completed' },
+    { empId: 3, expenseType: 'Meals', receipt: null, amount: 50, status: 'Manager Rejected' },
+    // Add more dummy data as needed
+  ];
+
+  editExpense(expense: Expense) {
+    // Logic to edit the expense and upload receipt if not uploaded
+    console.log('Edit expense:', expense);
   }
 
+  deleteExpense(empId: number) {
+    // Logic to delete the expense
+    this.expenses = this.expenses.filter(expense => expense.empId !== empId);
+    console.log('Delete expense with Emp ID:', empId);
+  }
+}

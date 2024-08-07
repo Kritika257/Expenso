@@ -27,7 +27,8 @@ export class DashboardComponent implements OnInit {
 
   chartOptions1: ChartOptions<'doughnut'> = {
     responsive: true,
-    cutout: '50%',
+    aspectRatio:-1,
+    cutout: '60%', // Adjusts the size of the center cutout 
     layout: {
       padding: 0
     },
@@ -35,9 +36,10 @@ export class DashboardComponent implements OnInit {
       legend: {
         display: true, 
         position: 'right',
+        
         labels: {
           font: {
-            size: 10 //Increase the legend font size
+            size: 12 //Increase the legend font size
           }
         }
       },

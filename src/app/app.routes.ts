@@ -41,7 +41,7 @@ export const routes: Routes = [
         component: SettingsComponent,
       },
       {
-        path: 'user-management',
+        path: 'usermanagement',
         component: UsermanagementComponent,
       },
       {

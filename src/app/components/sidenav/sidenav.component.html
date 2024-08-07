@@ -41,15 +41,15 @@
          <!-- Admin Menu Items -->
       <ng-container *ngIf="isAdmin">
 
-        <a mat-list-item routerLink="/app-usermanagement" routerLinkActive="list-item-active" [ngClass]="{'collapsed': !isExpanded}" class="nav-item">
+        <a mat-list-item routerLink="/usermanagement" routerLinkActive="list-item-active" [ngClass]="{'collapsed': !isExpanded}" class="nav-item">
           <mat-icon class="nav-icon">group</mat-icon>
           <span class="nav-text">User Management</span>
         </a>
-        <a mat-list-item routerLink="/app-app-reports" routerLinkActive="list-item-active" [ngClass]="{'collapsed': !isExpanded}" class="nav-item">
+        <a mat-list-item routerLink="/app-reports" routerLinkActive="list-item-active" [ngClass]="{'collapsed': !isExpanded}" class="nav-item">
           <mat-icon class="nav-icon">bar_chart</mat-icon>
           <span class="nav-text">App Report</span>
         </a>
-        <a mat-list-item routerLink="/app-app-overview" routerLinkActive="list-item-active" [ngClass]="{'collapsed': !isExpanded}" class="nav-item">
+        <a mat-list-item routerLink="/app-overview" routerLinkActive="list-item-active" [ngClass]="{'collapsed': !isExpanded}" class="nav-item">
           <mat-icon class="nav-icon">dashboard</mat-icon>
           <span class="nav-text">App Overview</span>
         </a>

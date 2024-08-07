@@ -3,41 +3,34 @@
     <div class="info-box p-4 border bg-light mt-1">
                 <p class="header-top">REPORTS</p>
 
-                <form [formGroup]="expenseForm">
-                    <div class="form-group">
-                      <label for="expenseType">Expense Type</label>
-                      <select id="expenseType" class="form-control" formControlName="expenseType" >
-                        <option *ngFor="let type of expenseTypes" [value]="type">{{ type }}</option>
-                      </select>
-                    </div>
-                
-                    <div class="form-group mt-4 receipt-grp">
-                      <label for="receipts">Are receipts are uploaded ?</label>
-                      <div *ngIf="receiptName">
-                        <p>{{ receiptName }}</p>
-                      </div>
-                      <div *ngIf="!receiptName">
-                        <input type="file" id="receipts" (change)="onFileChange($event)" class="form-control receipt-input">
-                      </div>
-                    </div>
-                
-                    <div class="form-group mt-4">
-                      <label for="amount"> Expense Amount</label>
-                      <input id="amount" type="text" class="form-control" formControlName="amount" >
-                    </div>
-                
-                    <div class="form-group mt-4">
-                      <label for="approveStatus">Approval Status</label>
-                      <select id="approveStatus" class="form-control" formControlName="approveStatus" >
-                        <option *ngFor="let status of approveStatuses" [value]="status">{{ status }}</option>
-                      </select>
-                    </div>
-                
-                    <div class="form-group mt-4 text-right">
-                      <button type="button" class="btn btn-primary" (click)="editExpense()">Edit</button>
-                      <button type="button" class="btn btn-danger ms-2" (click)="deleteExpense()">Delete</button>
-                    </div>
-                  </form>
+                <table class="table table-striped">
+                  <thead>
+                    <tr>
+                      <th scope="col">Emp ID</th>
+                      <th scope="col">Expense Type</th>
+                      <th scope="col">Display Receipt</th>
+                      <th scope="col">Amount</th>
+                      <th scope="col">Status</th>
+                      <th scope="col">Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let expense of expenses">
+                      <td>{{ expense.empId }}</td>
+                      <td>{{ expense.expenseType }}</td>
+                      <td>
+                        <a *ngIf="expense.receipt" [href]="expense.receipt" target="_blank">View</a>
+                        <span *ngIf="!expense.receipt">No Receipt</span>
+                      </td>
+                      <td>{{ expense.amount | currency }}</td>
+                      <td>{{ expense.status }}</td>
+                      <td>
+                        <i class="fas fa-edit action-icon" (click)="editExpense(expense)"></i>
+                        <i class="fas fa-trash-alt action-icon" (click)="deleteExpense(expense.empId)"></i>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              
                 </div>
-
                 </div>
