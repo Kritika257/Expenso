@@ -11,17 +11,12 @@
   font-weight: bold;
   color: #808080;
 }
-
-.table th{
-  color: #3b4861;
-}
-
-thead {
-  font-size: 20px;
-}
   
 .table th{
   text-align: center;
+  color: #f4f5f7;
+  background-color: #0e8174;
+   font-size: 20px;
 }
   
 .tb-data{
@@ -29,7 +24,7 @@ thead {
 }
 
 .tb-amt {
-  text-align: right; /* Optional: Align amounts to the right if needed */
+  text-align: right;
 }
 .tb-icons{
   text-align: center;
@@ -37,7 +32,7 @@ thead {
 
 .action-icon {
   cursor: pointer;
-  color: #283848;
+  color: #0e8174;
   font-size: 18px;
 }
   
@@ -50,5 +45,14 @@ thead {
 }
 
 .fa-trash-alt{
+  margin-left: 10px;
+}
+
+.fa-save{
+  margin-right: 10px;
+}
+
+.fa-times{
+  margin-right: 10px;
   margin-left: 10px;
 }

@@ -2,7 +2,7 @@ import { Component, OnInit} from '@angular/core';
 import { BaseChartDirective } from 'ng2-charts';
 import { ChartData, ChartOptions } from 'chart.js';
 import { Chart, registerables} from 'chart.js';
-import { DashboardService } from '../../services/dashboard.service'; // Import your service
+import { DashboardService } from '../../services/dashboard.service'; 
 
 
 Chart.register(...registerables)
@@ -28,7 +28,7 @@ export class DashboardComponent implements OnInit {
   chartOptions1: ChartOptions<'doughnut'> = {
     responsive: true,
     aspectRatio: 0,
-    cutout: '60%', // Adjusts the size of the center cutout 
+    cutout: '60%', // Cutout 
     layout: {
       padding: 2
     },
@@ -38,13 +38,13 @@ export class DashboardComponent implements OnInit {
         position: 'right',
         labels: {
           font: {
-            size: 12 //Increase the legend font size
+            size: 12 // Labels Font Size
           }
         }
       },
       title: {
       display: true,
-      text: 'Category-Wise Expense Distribution',
+      text: 'Category-Wise Expense Distribution', // Title
       font: {
         size: 18 // Title font size
       },
@@ -82,7 +82,7 @@ export class DashboardComponent implements OnInit {
     },
     title: {
       display: true,
-      text: 'Quaterly Expense Distribution',
+      text: 'Quaterly Expense Distribution', // Title
       font: {
         size: 18// Title font size
       },
