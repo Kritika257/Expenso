@@ -1,9 +1,9 @@
 <div class="container-fluid content">
 
     <div class="info-box p-4 border bg-light mt-1">
-                <p class="header-top">REPORTS</p>
+                <p class="header-top">REPORTS</p> <!--Title-->
                 <table class="table table-striped table-bordered">
-                  <thead>
+                  <thead>  <!--Table Header -->
                     <tr>
                       <th scope="col">Emp ID</th>
                       <th scope="col">Expense Type</th>
@@ -14,7 +14,7 @@
                     </tr>
                   </thead>
 
-                  <tbody>
+                  <tbody> <!--Table Data-->
                     <tr *ngFor="let expense of expenses">
                       <td class="tb-data">{{ expense.empId }}</td>
                       <td class="tb-data">{{ expense.expenseType }}</td>

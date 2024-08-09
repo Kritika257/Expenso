@@ -20,7 +20,7 @@ export class ExpenseComponent implements OnInit {
   public typeaheadNoResults: boolean = false; // Initial value set to false
   public dataSource: string[] = ['Admin', 'Manager', 'Kritika']; // Simplified type declaration
 
-  public expenseTypes: string[] = []; // Declare and initialize expenseTypes
+  public expenseTypes: string[] = []; 
   public defaultDate: string; // Declare defaultDate
 
   constructor(private expenseService: ExpenseService) {
@@ -29,18 +29,16 @@ export class ExpenseComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // Fetch expense types from the service and assign them to expenseTypes
+    
     this.expenseService.getExpenseTypes().subscribe((data) => {
       this.expenseTypes = data;
     });
   }
 
-  // Method to change the typeahead loading state
   public changeTypeaheadLoading(isLoading: boolean): void {
     this.typeaheadLoading = isLoading;
   }
 
-  // Method to change the typeahead no results state
   public changeTypeaheadNoResults(hasNoResults: boolean): void {
     this.typeaheadNoResults = hasNoResults;
   }
