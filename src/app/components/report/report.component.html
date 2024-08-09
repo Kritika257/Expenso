@@ -3,7 +3,7 @@
     <div class="info-box p-4 border bg-light mt-1">
                 <p class="header-top">REPORTS</p>
 
-                <table class="table table-striped">
+                <table class="table table-striped table-bordered">
                   <thead>
                     <tr>
                       <th scope="col">Emp ID</th>
@@ -14,7 +14,7 @@
                       <th scope="col">Actions</th>
                     </tr>
                   </thead>
-                  <tbody>
+                  <tbody class="table-group-divider">
                     <tr *ngFor="let expense of expenses">
                       <td>{{ expense.empId }}</td>
                       <td>{{ expense.expenseType }}</td>

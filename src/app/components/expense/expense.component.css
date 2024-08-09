@@ -72,7 +72,22 @@
     margin-right: 10px; /* Adjust the space between label and input */
   }
   
-  .date-input {
-    width: 19%;
+  .date-display {
+    display: inline-block;
+    padding: 0.375rem 0;
+    font-size: 1rem;
+    color: teal;
+    border-bottom: 1px solid teal; /* Line at the bottom */
+    cursor: default; /* Prevent text selection cursor */
+    transition: all 0.3s ease; /* Smooth transition for hover effect */
   }
   
+  .date-display:hover {
+    color: #5fadb4; /* Change text color on hover */
+    border-bottom: 1px solid #2c4f52;
+    /* Thicken the line on hover */
+  }
+
+  .selectValue{
+    color: teal;
+  }

@@ -104,4 +104,14 @@
     box-shadow: 0 20px 8px rgba(0, 0, 0, 0.1);
     border-radius: 4px;
   }
-
+  .table th{
+    color: #3b4861;
+   }
+  
+   thead {
+    font-size: 20px;
+  }
+    
+    .table th, .table td {
+      text-align: center;
+    }

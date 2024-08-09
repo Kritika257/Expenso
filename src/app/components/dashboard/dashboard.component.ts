@@ -27,16 +27,15 @@ export class DashboardComponent implements OnInit {
 
   chartOptions1: ChartOptions<'doughnut'> = {
     responsive: true,
-    aspectRatio:-1,
+    aspectRatio: 0,
     cutout: '60%', // Adjusts the size of the center cutout 
     layout: {
-      padding: 0
+      padding: 2
     },
     plugins: {
       legend: {
         display: true, 
         position: 'right',
-        
         labels: {
           font: {
             size: 12 //Increase the legend font size
@@ -45,20 +44,13 @@ export class DashboardComponent implements OnInit {
       },
       title: {
       display: true,
-      text: 'Doughnut Chart Title',
+      text: 'Category-Wise Expense Distribution',
       font: {
         size: 18 // Title font size
-      }
+      },
+      align: 'start' // Aligns the title to the left
     }
     },
-    animation: {
-      animateScale: true,
-      animateRotate: true
-    },
-    hover: {
-      mode: 'nearest',
-      intersect: true
-    }
   };
 
   data2: ChartData<'bar'> = {
@@ -90,10 +82,11 @@ export class DashboardComponent implements OnInit {
     },
     title: {
       display: true,
-      text: 'Bar Chart Title',
+      text: 'Quaterly Expense Distribution',
       font: {
-        size: 18 // Title font size
-      }
+        size: 18// Title font size
+      },
+      align: 'start' // Aligns the title to the left
     }
   }
 };
