@@ -95,6 +95,7 @@
     border-radius: 4px;
     justify-content: center;
     display: flex;
+    align-items: center;
   }
  
   .table-container{

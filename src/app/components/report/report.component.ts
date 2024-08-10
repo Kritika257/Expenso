@@ -34,7 +34,16 @@ export class ReportComponent implements OnInit {
     });
   }
 
+  onFileChange(event: Event, expense: Expense): void {
+    const input = event.target as HTMLInputElement;
+    if (input.files && input.files.length > 0) {
+      expense.tempReceipt = input.files[0];
+    } else {
+      expense.tempReceipt = null;  // Handle cases where no file is selected
+    }
+  }
 
+  /*
   handleFileInput(event: Event, expense: Expense): void {
     // To handel 0 file input
     const input = event.target as HTMLInputElement;
@@ -42,6 +51,7 @@ export class ReportComponent implements OnInit {
       expense.tempReceipt = input.files[0];
     }
   }
+    */
 
   editExpense(expense: Expense) {
     // To edit
