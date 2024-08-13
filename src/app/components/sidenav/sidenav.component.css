@@ -42,6 +42,10 @@ mat-sidenav {
   background-color: #bcbcbe; /* Replace with your desired color */
 }
 
+
+.admin-nav-item{
+  margin-top: 10px;
+}
 mat-icon {
   color: #05234f;
   font-family: 'Material Icons';

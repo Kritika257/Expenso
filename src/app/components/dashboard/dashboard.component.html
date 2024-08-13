@@ -10,7 +10,7 @@
                     <i class="fas fa-users icon-1 card-icon me-3"></i>
                     <div>
                     <h5 class="card-title">Used Budget</h5>
-                    <p class="card-text">1,234</p>
+                    <p class="card-text">{{ usedBudget | number }}</p>
                     </div>
                 </div>
             </div>
@@ -21,7 +21,7 @@
                 <i class="fas fa-chart-line icon-2 card-icon me-3"></i>
                 <div>
                   <h5 class="card-title">Recent Expenses</h5>
-                  <p class="card-text">$12,345</p>
+                  <p class="card-text">{{ recentExpenses | currency }}</p>
                 </div>
               </div>
             </div>
@@ -32,7 +32,7 @@
                     <i class="fas fa-clock icon-3 card-icon me-3"></i>
                     <div>
                     <h5 class="card-title">Pending Approvals</h5>
-                    <p class="card-text">567</p>
+                    <p class="card-text">{{ pendingApprovals | number }}</p>
                     </div>
                 </div>
             </div>
@@ -69,30 +69,12 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>David Mil</td>
-                    <td>1,001</td>
-                    <td>43</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Jack Deo</td>
-                    <td>1,002</td>
-                    <td>23</td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>Amily Seal</td>
-                    <td>1,003</td>
-                    <td>67</td>
-                </tr>
-                <tr>
-                    <td>4</td>
-                    <td>Gorge Will</td>
-                    <td>1,004</td>
-                    <td>59</td>
-                </tr>
+            <tr *ngFor="let item of tableData">
+                <td>{{ item.expenseType }}</td>
+                <td>{{ item.amount | number }}</td>
+                <td>{{ item.expenses | number }}</td>
+                <td>{{ item.pendingApprovals }}</td>
+              </tr>
             </tbody>
         </table>
     </div>

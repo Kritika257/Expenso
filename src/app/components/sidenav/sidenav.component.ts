@@ -8,8 +8,6 @@ import { CommonModule} from '@angular/common';
 import { Router } from '@angular/router';
 
 
-
-
 @Component({
   selector: 'app-sidenav',
   standalone: true,
@@ -29,6 +27,11 @@ export class SidenavComponent  {
 
   adminClicked(): void {
     this.isAdmin = !this.isAdmin;  // Toggle between admin view and default view
-    this.router.navigate(['/usermanagement']);
+    this.router.navigate(['/admin-dashboard']); // To route to Admin Dashboard
+  }
+
+  routeToUserDashboard() : void {
+    this.isAdmin = !this.isAdmin;    // Toggle between admin view and default view
+    this.router.navigate(['/dashboard']); // To route to User Dashboard
   }
 }

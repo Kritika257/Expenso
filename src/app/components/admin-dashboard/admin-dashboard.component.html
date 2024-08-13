@@ -1,0 +1,57 @@
+<div class="container-fluid content">
+    <div class="info-box p-4 border bg-light mt-1">
+        <div class="header-box">
+            <p class="header-top">ADMIN DASHBOARD</p>
+        </div>
+        <div class="row mt-2">
+            <div class="col-md-4 mb-2">
+                <div class="card">
+                    <div class="card-body d-flex align-items-center">
+                        <i class="fa-solid fa-sack-dollar icon-1 card-icon me-3"></i>
+                        <div>
+                        <h5 class="card-title">Total Office Expenses</h5>
+                        <p class="card-text">65</p>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+            <div class="col-md-4 mb-2">
+                <div class="card">
+                  <div class="card-body d-flex align-items-center">
+                    <i class="fa-solid fa-boxes-stacked icon-2 card-icon me-3"></i>
+                    <div>
+                      <h5 class="card-title">Total Inventory Value</h5>
+                      <p class="card-text">788</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            <div class="col-md-4 mb-2">
+                <div class="card">
+                    <div class="card-body d-flex align-items-center">
+                        <i class="fa-solid fa-arrow-up-1-9 icon-3 card-icon me-3"></i>
+                        <div>
+                        <h5 class="card-title">Number of Vendors</h5>
+                        <p class="card-text">789</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row chart mt-5 mb-5 ">
+            <div class="col-md-6 line-chart">
+                <canvas id="lineChart" baseChart 
+                [type]="'line'"
+                [data]="lineChartData"
+                [options]="lineChartOptions">
+                </canvas>
+              </div>
+              <div class="col-md-6 pie-chart">
+                <canvas baseChart
+                  [data]="pieChartData"
+                  [type]="'pie'"
+                  [options]="pieChartOptions">
+                </canvas>
+              </div>
+        </div>
+</div>

@@ -3,6 +3,7 @@ import { BaseChartDirective } from 'ng2-charts';
 import { ChartData, ChartOptions } from 'chart.js';
 import { Chart, registerables} from 'chart.js';
 import { DashboardService } from '../../services/dashboard.service'; 
+import { CommonModule } from '@angular/common';
 
 
 Chart.register(...registerables)
@@ -12,7 +13,7 @@ Chart.register(...registerables)
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [BaseChartDirective ],
+  imports: [BaseChartDirective, CommonModule ],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css'
 })
@@ -90,7 +91,13 @@ export class DashboardComponent implements OnInit {
     }
   }
 };
-    
+
+  tableData: Array<{ expenseType: string, amount: number, expenses: number, pendingApprovals: number }> = [];
+
+  usedBudget: number = 0;
+  recentExpenses: number = 0;
+  pendingApprovals: number = 0;
+
 
   constructor(private dashboardService: DashboardService) {}
 
@@ -98,11 +105,16 @@ export class DashboardComponent implements OnInit {
     this.dashboardService.getDashboardData().subscribe(data => {
       this.data1 = data.data1;
       this.data2 = data.data2;
+      this.tableData = data.tableData;
+
+      this.usedBudget = 456
+      this.recentExpenses = 12345;  
+      this.pendingApprovals = 567;
 
       // Apply styles for doughnut chart
       this.data1.datasets[0].backgroundColor = ["#10c4b5", "#005562", "#0e8174", "#6eba8c"];
       this.data1.datasets[0].borderColor = ["#0e8174", "#10c4b5", "#6eba8c", "#005562"];
-      this.data1.datasets[0].borderWidth = 1;
+      
 
       // Apply styles for bar chart
       this.data2.datasets.forEach(dataset => {
@@ -111,7 +123,10 @@ export class DashboardComponent implements OnInit {
         if (dataset.label === 'Professional Development') dataset.backgroundColor = "#0e8174";
         if (dataset.label === 'Bills') dataset.backgroundColor = "#6eba8c";
       });
+      
     });
+
+    
   }
 }
 

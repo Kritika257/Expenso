@@ -5,9 +5,10 @@ import { ReportComponent } from './components/report/report.component';
 import { SettingsComponent } from './components/settings/settings.component';
 import { LoginComponent } from './login/login.component';
 import { LayoutComponent } from './layout/layout.component';
-import { UsermanagementComponent } from './components/usermanagement/usermanagement.component';
-import { AppReportsComponent } from './components/app-reports/app-reports.component';
-import { AppOverviewComponent } from './components/app-overview/app-overview.component';
+import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
+import { InventoryManagementComponent } from './components/inventory-management/inventory-management.component';
+import { VendorManagementComponent } from './components/vendor-management/vendor-management.component';
+import { OfficeExpenseManagementComponent } from './components/office-expense-management/office-expense-management.component';
 
 
 export const routes: Routes = [
@@ -41,16 +42,20 @@ export const routes: Routes = [
         component: SettingsComponent,
       },
       {
-        path: 'usermanagement',
-        component: UsermanagementComponent,
+        path: 'admin-dashboard',
+        component: AdminDashboardComponent,
       },
       {
-        path: 'app-reports',
-        component: AppReportsComponent,
+        path: 'inventory-management',
+        component: InventoryManagementComponent,
       },
       {
-        path: 'app-overview',
-        component: AppOverviewComponent,
+        path: 'vendor-management',
+        component: VendorManagementComponent,
+      },
+      {
+        path: 'office-expense',
+        component: OfficeExpenseManagementComponent,
       }
     ],
   },

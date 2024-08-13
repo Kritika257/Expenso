@@ -31,29 +31,32 @@
         </a>
 
         <mat-divider></mat-divider>
-        <a mat-list-item (click)="adminClicked()" [ngClass]="{'collapsed': !isExpanded}" class="admin-nav-item">
+        <a mat-list-item (click)="adminClicked()" [ngClass]="{'collapsed': !isExpanded}" class="admin-nav-item" >
           <mat-icon class="nav-icon">admin_panel_settings</mat-icon>
           <span class="nav-text">Admin View</span>
-         <!-- <mat-icon class="nav-icon">keyboard_arrow_down</mat-icon> -->
-        </a>
+                </a>
       </ng-container>
       
          <!-- Admin Menu Items -->
-      <ng-container *ngIf="isAdmin">
+      <ng-container *ngIf="isAdmin" >
 
-        <a mat-list-item routerLink="/usermanagement" routerLinkActive="list-item-active" [ngClass]="{'collapsed': !isExpanded}" class="nav-item">
-          <mat-icon class="nav-icon">group</mat-icon>
-          <span class="nav-text">User Management</span>
-        </a>
-        <a mat-list-item routerLink="/app-reports" routerLinkActive="list-item-active" [ngClass]="{'collapsed': !isExpanded}" class="nav-item">
-          <mat-icon class="nav-icon">bar_chart</mat-icon>
-          <span class="nav-text">App Report</span>
-        </a>
-        <a mat-list-item routerLink="/app-overview" routerLinkActive="list-item-active" [ngClass]="{'collapsed': !isExpanded}" class="nav-item">
+        <a mat-list-item routerLink="/admin-dashboard" routerLinkActive="list-item-active" [ngClass]="{'collapsed': !isExpanded}" class="nav-item">
           <mat-icon class="nav-icon">dashboard</mat-icon>
-          <span class="nav-text">App Overview</span>
+          <span class="nav-text">Admin Dashboard</span>
         </a>
-        <a mat-list-item (click)="adminClicked()" [ngClass]="{'collapsed': !isExpanded}" class="nav-item">
+        <a mat-list-item routerLink="/inventory-management" routerLinkActive="list-item-active" [ngClass]="{'collapsed': !isExpanded}" class="nav-item">
+          <mat-icon class="nav-icon">inventory_2</mat-icon>
+          <span class="nav-text">Inventory</span>
+        </a>
+        <a mat-list-item routerLink="/vendor-management" routerLinkActive="list-item-active" [ngClass]="{'collapsed': !isExpanded}" class="nav-item">
+          <mat-icon class="nav-icon">handshake</mat-icon>
+          <span class="nav-text">Vendor</span>
+        </a>
+        <a mat-list-item routerLink="/office-expense" routerLinkActive="list-item-active" [ngClass]="{'collapsed': !isExpanded}" class="nav-item">
+          <mat-icon class="nav-icon">apartment</mat-icon>
+          <span class="nav-text">Office Expense</span>
+        </a>
+        <a mat-list-item (click)="routeToUserDashboard()" [ngClass]="{'collapsed': !isExpanded}" class="nav-item">
           <mat-icon class="nav-icon">arrow_back</mat-icon>
           <span class="nav-text">Back to User view</span>
         </a>
