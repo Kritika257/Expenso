@@ -96,3 +96,7 @@
  thead {
   font-size: 15px;
 }
+
+.table th, .table td {
+  text-align: center;
+}

@@ -37,6 +37,19 @@ getPieChartData(): Observable<any> {
       }
     ]
   };
-  return of(mockPieData); // Simulates a delay of 1 second
+
+  return of(mockPieData); //delay of 1 second
 }
+
+  getEmployeeData(): Observable<any[]> {
+    const mockEmployeeData = [
+      { employeeName: 'John Doe', submissionDate: '2024-07-01', amount: 1200, status: 'Approved' },
+      { employeeName: 'Jane Smith', submissionDate: '2024-07-10', amount: 800, status: 'Pending' },
+      { employeeName: 'Alice Johnson', submissionDate: '2024-07-15', amount: 1500, status: 'Approved' },
+      { employeeName: 'Bob Brown', submissionDate: '2024-07-20', amount: 700, status: 'Rejected' }
+    ];
+    return of(mockEmployeeData); // Simulates a delay of 1 second
+  }
 }
+
+

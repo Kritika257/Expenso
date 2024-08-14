@@ -66,6 +66,14 @@
                           <th>Status</th>
                       </tr>
                   </thead>
+                  <tbody>
+                    <tr *ngFor="let employee of tableData">
+                      <td>{{ employee.employeeName }}</td>
+                      <td>{{ employee.submissionDate }}</td>
+                      <td>{{ employee.amount | currency }}</td>
+                      <td>{{ employee.status }}</td>
+                    </tr>
+                  </tbody>
                   </table>
             </div>
 </div>

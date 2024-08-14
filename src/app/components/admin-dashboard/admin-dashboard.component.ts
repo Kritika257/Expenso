@@ -85,6 +85,7 @@ export class AdminDashboardComponent implements OnInit {
     }
   };
 
+  tableData: any[] = [];
 
   constructor(private admindashboardService: AdmindashboardService) { }
 
@@ -100,6 +101,10 @@ export class AdminDashboardComponent implements OnInit {
       this.pieChartData.labels = data.labels;
       this.pieChartData.datasets[0].data = data.datasets[0].data;
       this.pieChartData.datasets[0].backgroundColor = data.datasets[0].backgroundColor;
+    });
+
+    this.admindashboardService.getEmployeeData().subscribe((data: any[]) => {
+      this.tableData = data;
     });
 }
 }
