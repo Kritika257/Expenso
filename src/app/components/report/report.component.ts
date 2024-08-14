@@ -43,46 +43,59 @@ export class ReportComponent implements OnInit {
     }
   }
 
-  /*
-  handleFileInput(event: Event, expense: Expense): void {
-    // To handel 0 file input
-    const input = event.target as HTMLInputElement;
-    if (input.files && input.files.length > 0) {
-      expense.tempReceipt = input.files[0];
-    }
-  }
-    */
+  currentEditingExpense: Expense | null = null;
 
   editExpense(expense: Expense) {
-    // To edit
-    expense.isEditing = true;
-    expense.tempReceipt = expense.receipt;
-    expense.tempAmount = expense.amount;
-  }
+    // If another expense is currently being edited, cancel its editing mode
+    if (this.currentEditingExpense && this.currentEditingExpense !== expense) {
+      this.currentEditingExpense.isEditing = false;
+      this.currentEditingExpense.tempReceipt = null;
+      this.currentEditingExpense.tempAmount = null;
+    }
 
-  saveExpense(expense: Expense) {
-    // To save 
-    expense.receipt = expense.tempReceipt as string;
-    expense.amount = expense.tempAmount as number;
-    expense.isEditing = false;
+      // Set the current expense as the one being edited
+  this.currentEditingExpense = expense;
+  expense.isEditing = true;
+  expense.tempReceipt = expense.receipt;
+  expense.tempAmount = expense.amount;
+}
 
-    console.log('Saved expense:', expense);
-  }
+saveExpense(expense: Expense) {
+  // Save the changes
+  expense.receipt = expense.tempReceipt as string;
+  expense.amount = expense.tempAmount as number;
+  expense.isEditing = false;
 
-  cancelEdit(expense: Expense) {
-   // To cancel
-    expense.isEditing = false;
-    expense.tempReceipt = null;
-    expense.tempAmount = null;
-  }
+  // Reset the currently editing expense
+  this.currentEditingExpense = null;
 
-  deleteExpense(empId: number) {
-    // To delete
-    this.expenses = this.expenses.filter(expense => expense.empId !== empId);
-    console.log('Deleted expense with Emp ID:', empId);
+  console.log('Saved expense:', expense);
+}
+
+cancelEdit(expense: Expense) {
+  // Cancel the edit
+  expense.isEditing = false;
+  expense.tempReceipt = null;
+  expense.tempAmount = null;
+
+  // Reset the currently editing expense
+  this.currentEditingExpense = null;
+}
+
+deleteExpense(empId: number) {
+ 
+  const expenseToDelete = this.expenses.find(expense => expense.empId === empId);
+
+  if (expenseToDelete && this.currentEditingExpense === expenseToDelete) {
+    this.currentEditingExpense = null;
   }
+  // Delete the expense
+  this.expenses = this.expenses.filter(expense => expense.empId !== empId);
+  console.log('Deleted expense with Emp ID:', empId);
+}
 }
   
+
 
 
 

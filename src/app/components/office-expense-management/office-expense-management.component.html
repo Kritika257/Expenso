@@ -15,6 +15,22 @@
                     <th scope="col">Comments</th>
                   </tr>
                 </thead>
-                </table>
+                <tbody>
+                  <tr *ngFor="let data of data | paginate: { itemsPerPage: 12, currentPage: p }">
+                    <td>{{ data.empName }}</td>
+                    <td>{{ data.submissionDate }}</td>
+                    <td>{{ data.expenseType }}</td>
+                    <td>{{ data.amount }}</td>
+                    <td>{{ data.receipt }}</td>
+                    <td>{{ data.approvalStatus }}</td>
+                    <td>{{ data.comments }}</td>
+                  </tr>
+                </tbody>
+              </table>
+
+               <!-- Pagination Controls -->
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+              
 </div>
 </div>
+
