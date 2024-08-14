@@ -16,14 +16,21 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr *ngFor="let data of data | paginate: { itemsPerPage: 12, currentPage: p }">
+                  <tr *ngFor="let data of data | paginate: { itemsPerPage: 5, currentPage: p }">
                     <td>{{ data.empName }}</td>
                     <td>{{ data.submissionDate }}</td>
                     <td>{{ data.expenseType }}</td>
                     <td>{{ data.amount }}</td>
                     <td>{{ data.receipt }}</td>
-                    <td>{{ data.approvalStatus }}</td>
-                    <td>{{ data.comments }}</td>
+                    <td>
+                      <div class="buttons-container">
+                      <button (click)="approve(data)">Approve</button>
+                      <button (click)="reject(data)">Reject</button>
+                      </div>
+                    </td>
+                    <td>
+                      <textarea [(ngModel)]="data.comments" placeholder="Add comment here"></textarea>
+                    </td>
                   </tr>
                 </tbody>
               </table>
