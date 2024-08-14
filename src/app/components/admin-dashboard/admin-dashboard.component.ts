@@ -29,6 +29,9 @@ export class AdminDashboardComponent implements OnInit {
   };
   lineChartOptions: ChartOptions<'line'> = {
     responsive: true,
+    layout: {
+      padding: 2
+    },
     plugins: {
       legend: {
         display: true,
@@ -62,14 +65,18 @@ export class AdminDashboardComponent implements OnInit {
 
   pieChartOptions: ChartOptions<'pie'> = {
     responsive: true,
+    aspectRatio: 0,
+    layout: {
+      padding: 2
+    },
     plugins: {
       legend: {
         display: true,
-        position: 'top'
+        position: 'right'
       },
       title: {
         display: true,
-        text: 'Sales Distribution',
+        text: 'Category-Wise Expense Distribution',
         font: {
           size: 18
         },

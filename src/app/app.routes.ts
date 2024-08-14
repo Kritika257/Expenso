@@ -6,9 +6,8 @@ import { SettingsComponent } from './components/settings/settings.component';
 import { LoginComponent } from './login/login.component';
 import { LayoutComponent } from './layout/layout.component';
 import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
-import { InventoryManagementComponent } from './components/inventory-management/inventory-management.component';
-import { VendorManagementComponent } from './components/vendor-management/vendor-management.component';
 import { OfficeExpenseManagementComponent } from './components/office-expense-management/office-expense-management.component';
+import { AdminTaskComponent } from './components/admin-task/admin-task.component'
 
 
 export const routes: Routes = [
@@ -46,16 +45,12 @@ export const routes: Routes = [
         component: AdminDashboardComponent,
       },
       {
-        path: 'inventory-management',
-        component: InventoryManagementComponent,
-      },
-      {
-        path: 'vendor-management',
-        component: VendorManagementComponent,
-      },
-      {
         path: 'office-expense',
         component: OfficeExpenseManagementComponent,
+      },
+      {
+        path: 'adminTask',
+        component: AdminTaskComponent,
       }
     ],
   },
