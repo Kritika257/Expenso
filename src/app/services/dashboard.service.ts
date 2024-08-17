@@ -47,10 +47,10 @@ export class DashboardService {
    
 
     tableData: [
-      { expenseType: 'Travel', amount: 1001, expenses: 200, pendingApprovals: 43 },
-      { expenseType: 'Team Activities', amount: 1002, expenses: 150, pendingApprovals: 23 },
-      { expenseType: 'Professional Development', amount: 1003, expenses: 300, pendingApprovals: 67 },
-      { expenseType: 'Bills', amount: 1004, expenses: 400, pendingApprovals: 59 }
+      { expenseType: 'Travel', amount: 1001, pendingApprovals: 3 },
+      { expenseType: 'Team Activities', amount: 1002, pendingApprovals: 3 },
+      { expenseType: 'Professional Development', amount: 1003, pendingApprovals: 6 },
+      { expenseType: 'Bills', amount: 1004, pendingApprovals: 5 }
     ]
   };
 
