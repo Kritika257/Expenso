@@ -49,6 +49,12 @@ export class OfficeExpenseManagementComponent implements OnInit {
     });
   }
 
+  approveSelected() {
+    const selectedItems = this.data.filter(item => item.selected);
+    selectedItems.forEach(item => this.approve(item));
+    // Optionally send all selected approvals to the backend in a batch
+  }
+
   reject(data: any) {
     emailjs.send("service_1rl00md", "template_rkr0sph", {
       emp_name: data.empName,
@@ -64,6 +70,12 @@ export class OfficeExpenseManagementComponent implements OnInit {
     }, (error) => {
       console.error('Failed to send rejection email', error);
     });
+  }
+
+  rejectSelected() {
+    const selectedItems = this.data.filter(item => item.selected);
+    selectedItems.forEach(item => this.reject(item));
+    // Optionally send all selected rejections to the backend in a batch
   }
 }
 

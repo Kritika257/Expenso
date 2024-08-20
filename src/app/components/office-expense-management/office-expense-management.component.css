@@ -19,13 +19,15 @@
      font-size: 15px;
   }
 
-  table .custom-checkbox {
-    justify-content: center;
-    align-items: center;
+  .custom-checkbox {
+    text-align: center;
+    vertical-align: middle;
   }
-  .check{
-    align-items: center;
-    justify-content: center;
+
+  .select{
+    display: flex;
+    gap: 10px; /* Space between buttons */
+  margin-bottom: 5px;
   }
 
   .pagination-controls {
