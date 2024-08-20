@@ -97,6 +97,18 @@
   font-size: 15px;
 }
 
-.table th, .table td {
+.table th {
+  text-align: center;
+}
+
+.amount{
+  text-align: right;
+}
+
+.date{
+  text-align: center;
+}
+
+.status{
   text-align: center;
 }

@@ -17,7 +17,7 @@
                   <!--Table Data-->
                   <tbody>
                     <tr *ngFor="let expense of expenses">
-                      <td class="tb-data">{{ expense.empId }}</td>
+                      <td class="tb-data1">{{ expense.empId }}</td>
                       <td class="tb-data">{{ expense.expenseType }}</td>
                       <td class="tb-data">
                         <a *ngIf="expense.receipt && !expense.isEditing" [href]="expense.receipt" target="_blank">View</a>
@@ -25,7 +25,7 @@
                         <input *ngIf="expense.isEditing" type="file" (change)="onFileChange($event, expense)" class="file-input">
                       </td>
                       <td class="tb-amt">
-                        <span *ngIf="!expense.isEditing">{{ expense.amount | currency }}</span>
+                        <span *ngIf="!expense.isEditing">{{ expense.amount | number:'1.2-2' }}</span>
                         <input *ngIf="expense.isEditing" [(ngModel)]="expense.tempAmount" type="number" class="tb-amt-edit">
                       </td>
                       <td class="tb-data">{{ expense.status }}</td>

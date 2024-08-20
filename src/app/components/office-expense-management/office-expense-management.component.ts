@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { FormsModule } from '@angular/forms';
 import emailjs, { EmailJSResponseStatus } from '@emailjs/browser';
+import { OfficeExpenseService } from '../../services/office-expense.service';
 
 
 
@@ -13,35 +14,27 @@ import emailjs, { EmailJSResponseStatus } from '@emailjs/browser';
   templateUrl: './office-expense-management.component.html',
   styleUrl: './office-expense-management.component.css'
 })
-export class OfficeExpenseManagementComponent {
+export class OfficeExpenseManagementComponent implements OnInit {
 
-  data = [
-    { empName: 'Aman', submissionDate: '12', expenseType: 'Bills', amount: 45, receipt: 'No Receipt', approvalStatus: 'Pending', comments: 'Will approve' },
-    { empName: 'Aman', submissionDate: '12', expenseType: 'Bills', amount: 45, receipt: 'No Receipt', approvalStatus: 'Pending', comments: 'Will approve' },
-    { empName: 'Aman', submissionDate: '12', expenseType: 'Bills', amount: 45, receipt: 'No Receipt', approvalStatus: 'Pending', comments: 'Will approve' },
-    { empName: 'Aman', submissionDate: '12', expenseType: 'Bills', amount: 45, receipt: 'No Receipt', approvalStatus: 'Pending', comments: 'Will approve' },
-    { empName: 'Aman', submissionDate: '12', expenseType: 'Bills', amount: 45, receipt: 'No Receipt', approvalStatus: 'Pending', comments: 'Will approve' },
-    { empName: 'Aman', submissionDate: '12', expenseType: 'Bills', amount: 45, receipt: 'No Receipt', approvalStatus: 'Pending', comments: 'Will approve' },
-    { empName: 'Aman', submissionDate: '12', expenseType: 'Bills', amount: 45, receipt: 'No Receipt', approvalStatus: 'Pending', comments: 'Will approve' },
-    { empName: 'Aman', submissionDate: '12', expenseType: 'Bills', amount: 45, receipt: 'No Receipt', approvalStatus: 'Pending', comments: 'Will approve' },
-    { empName: 'Aman', submissionDate: '12', expenseType: 'Bills', amount: 45, receipt: 'No Receipt', approvalStatus: 'Pending', comments: 'Will approve' },
-    { empName: 'Aman', submissionDate: '12', expenseType: 'Bills', amount: 45, receipt: 'No Receipt', approvalStatus: 'Pending', comments: 'Will approve' },
-    { empName: 'Aman', submissionDate: '12', expenseType: 'Bills', amount: 45, receipt: 'No Receipt', approvalStatus: 'Pending', comments: 'Will approve' },
-    { empName: 'Aman', submissionDate: '12', expenseType: 'Bills', amount: 45, receipt: 'No Receipt', approvalStatus: 'Pending', comments: 'Will approve' },
-    { empName: 'Aman', submissionDate: '12', expenseType: 'Bills', amount: 45, receipt: 'No Receipt', approvalStatus: 'Pending', comments: 'Will approve' },
-    { empName: 'Aman', submissionDate: '12', expenseType: 'Bills', amount: 45, receipt: 'No Receipt', approvalStatus: 'Pending', comments: 'Will approve' },
-    { empName: 'Aman', submissionDate: '12', expenseType: 'Bills', amount: 45, receipt: 'No Receipt', approvalStatus: 'Pending', comments: 'Will approve' },
-    { empName: 'Aman', submissionDate: '12', expenseType: 'Bills', amount: 45, receipt: 'No Receipt', approvalStatus: 'Pending', comments: 'Will approve' },
-    { empName: 'Aman', submissionDate: '12', expenseType: 'Bills', amount: 45, receipt: 'No Receipt', approvalStatus: 'Pending', comments: 'Will approve' },
-    // Add more items here
-  ];
-  p: number = 1; // Current page number
-
-  constructor() {}
+    data: any[] = [];
+    p: number = 1; // Current page for pagination
+  
+    constructor(private officeExpenseService: OfficeExpenseService) { }
+  
+    ngOnInit(): void {
+      this.officeExpenseService.getExpenses().subscribe((expenses) => {
+        this.data = expenses;
+      });
+    }
+  
+    selectAll(event: any) {
+      const checked = event.target.checked;
+      this.data.forEach((item) => (item.selected = checked));
+    }
 
   approve(data: any) {
     // Send email via EmailJS
-    emailjs.send("service_1rl00md", "template_rkr0sph", {
+    emailjs.send("service_1rl00md", "template_z1dhwb3", {
       emp_name: data.empName,
       submission_date: data.submissionDate,
       expense_type: data.expenseType,
@@ -57,9 +50,20 @@ export class OfficeExpenseManagementComponent {
   }
 
   reject(data: any) {
-    // Handle reject logic
-    console.log('Rejected:', data);
-    data.approvalStatus = 'Rejected';
+    emailjs.send("service_1rl00md", "template_rkr0sph", {
+      emp_name: data.empName,
+      submission_date: data.submissionDate,
+      expense_type: data.expenseType,
+      amount: data.amount,
+      receipt: data.receipt,
+      comments: data.comments,
+    }, "sLQgz1t8GTy1GCl20")
+    .then((response: EmailJSResponseStatus) => {
+      console.log('Rejection email sent successfully', response.status, response.text);
+      data.approvalStatus = 'Rejected';
+    }, (error) => {
+      console.error('Failed to send rejection email', error);
+    });
   }
 }
 

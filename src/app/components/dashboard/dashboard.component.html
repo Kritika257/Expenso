@@ -21,7 +21,7 @@
                 <i class="fas fa-chart-line icon-2 card-icon me-3"></i>
                 <div>
                   <h5 class="card-title">Recent Expenses</h5>
-                  <p class="card-text">{{ recentExpenses | currency }}</p>
+                  <p class="card-text">{{ recentExpenses | number }}</p>
                 </div>
               </div>
             </div>
@@ -64,16 +64,14 @@
                 <tr>
                     <th>Expense Type</th>
                     <th>Amount</th>
-                    <th>Expenses</th>
                     <th>Pending Approvals</th>
                 </tr>
             </thead>
             <tbody>
             <tr *ngFor="let item of tableData">
                 <td>{{ item.expenseType }}</td>
-                <td>{{ item.amount | number }}</td>
-                <td>{{ item.expenses | number }}</td>
-                <td>{{ item.pendingApprovals }}</td>
+                <td class="amount">{{ item.amount | number:'1.2-2' }}</td>
+                <td class="approve">{{ item.pendingApprovals }}</td>
               </tr>
             </tbody>
         </table>

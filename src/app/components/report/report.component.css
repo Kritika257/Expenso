@@ -24,9 +24,14 @@
 }
 
 .tb-amt {
-  text-align: center;
+  text-align: right;
 }
 .tb-icons{
+  text-align: center;
+}
+
+.tb-data1{
+  width: 80px;
   text-align: center;
 }
 

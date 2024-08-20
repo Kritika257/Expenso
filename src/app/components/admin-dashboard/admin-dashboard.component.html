@@ -68,10 +68,10 @@
                   </thead>
                   <tbody>
                     <tr *ngFor="let employee of tableData">
-                      <td>{{ employee.employeeName }}</td>
-                      <td>{{ employee.submissionDate }}</td>
-                      <td>{{ employee.amount | currency }}</td>
-                      <td>{{ employee.status }}</td>
+                      <td class="name">{{ employee.employeeName }}</td>
+                      <td class="date">{{ employee.submissionDate | date:'MMM d, y' }}</td>
+                      <td class="amount">{{ employee.amount | number:'1.2-2' }}</td>
+                      <td class="status">{{ employee.status }}</td>
                     </tr>
                   </tbody>
                   </table>

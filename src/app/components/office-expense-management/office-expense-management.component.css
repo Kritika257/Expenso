@@ -19,6 +19,15 @@
      font-size: 15px;
   }
 
+  table .custom-checkbox {
+    justify-content: center;
+    align-items: center;
+  }
+  .check{
+    align-items: center;
+    justify-content: center;
+  }
+
   .pagination-controls {
     display: flex;
     justify-content: right;
@@ -66,6 +75,21 @@
     pointer-events: none;
   }
 
+  .name{
+    text-align: center;
+  }
+  
+  .amount{
+    text-align: right;
+  }
+
+  .data{
+    text-align: left;
+  }
+
+  .date{
+    text-align: center;
+  }
   table td button {
     padding: 5px 10px;
     margin: 0 5px;
