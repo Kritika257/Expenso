@@ -85,6 +85,10 @@ export class AdminDashboardComponent implements OnInit {
     }
   };
 
+  totalOfficeExpenses= 456;
+  totalInventoryValue= 78;
+  numberOfVendors= 7;
+
   tableData: any[] = [];
 
   constructor(private admindashboardService: AdmindashboardService) { }
@@ -105,6 +109,12 @@ export class AdminDashboardComponent implements OnInit {
 
     this.admindashboardService.getEmployeeData().subscribe((data: any[]) => {
       this.tableData = data;
+    });
+
+    this.admindashboardService.getDashboardData().subscribe(data => {
+      this.totalOfficeExpenses = data.totalOfficeExpenses;
+      this.totalInventoryValue = data.totalInventoryValue;
+      this.numberOfVendors = data.numberOfVendors;
     });
 }
 }

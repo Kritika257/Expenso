@@ -22,10 +22,10 @@
                       <td class="tb-data">
                         <a *ngIf="expense.receipt && !expense.isEditing" [href]="expense.receipt" target="_blank">View</a>
                         <span *ngIf="!expense.receipt && !expense.isEditing">No Receipt</span>
-                        <input *ngIf="expense.isEditing" type="file" (change)="onFileChange($event, expense)" class="file-input">
+                        <input *ngIf="expense.isEditing" type="file" (change)="onFileChange($event, expense)" class="file-input" accept=".png,.jpg,.pdf">
                       </td>
                       <td class="tb-amt">
-                        <span *ngIf="!expense.isEditing">{{ expense.amount | number:'1.2-2' }}</span>
+                        <span class="amount" *ngIf="!expense.isEditing">{{ expense.amount | number:'1.2-2' }}</span>
                         <input *ngIf="expense.isEditing" [(ngModel)]="expense.tempAmount" type="number" class="tb-amt-edit">
                       </td>
                       <td class="tb-data">{{ expense.status }}</td>

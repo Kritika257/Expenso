@@ -50,6 +50,10 @@ getPieChartData(): Observable<any> {
     ];
     return of(mockEmployeeData); // Simulates a delay of 1 second
   }
+
+  getDashboardData(): Observable<any> {
+    return this.http.get<any>(this.apiUrl);
+  }
 }
 
 

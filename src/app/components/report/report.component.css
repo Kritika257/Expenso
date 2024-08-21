@@ -24,8 +24,32 @@
 }
 
 .tb-amt {
-  text-align: right;
+  position: relative; /* Allows precise positioning of elements */
+  /* Remove default padding for alignment */
+
 }
+
+/* Aligns the span to the right */
+.amount {
+  display: block; 
+  text-align: right; /* Right-align the amount */
+  padding-right: 10px; /* Add some padding for spacing */
+}
+
+/* Centers the input */
+.tb-amt-edit {
+  width: 80%; /* Adjust width as needed */
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%); /* Center the input horizontally */
+  text-align: center; /* Center text inside the input */
+ 
+}
+
+.amt-box{
+  justify-content: center;
+}
+
 .tb-icons{
   text-align: center;
 }
