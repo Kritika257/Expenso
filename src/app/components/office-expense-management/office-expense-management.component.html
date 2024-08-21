@@ -1,7 +1,7 @@
 <div class="container-fluid content">
     <div class="info-box p-4 border bg-light mt-1">
         <div class="header-box">
-            <p class="header-top mb-4">OFFICE EXPENSE MANAGEMENT</p>
+            <p class="header-top mb-4"> OFFICE EXPENSE </p>
             <div class="select">
             <button class="btn btn-success btn-sm" (click)="approveSelected()">Approve Selected</button>
             <button class="btn btn-danger btn-sm" (click)="rejectSelected()">Reject Selected</button>
@@ -23,7 +23,7 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr *ngFor="let data of data | paginate: { itemsPerPage: 10, currentPage: p }">
+                  <tr *ngFor="let data of data | paginate: { itemsPerPage: 5, currentPage: p }">
                     <td class="check">
                       <input type="checkbox" [(ngModel)]="data.selected" />
                     </td>

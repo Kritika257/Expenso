@@ -57,5 +57,40 @@ export class DashboardService {
     // Simulate HTTP delay and return dummy data
     return of(dummyData).pipe(delay(1000));
   }
-  
+
+
+getTableData(): Observable<any[]> {
+  const dummyData = [
+    {
+      empName: 'John Doe',
+      expenseType: 'Travel',
+      amount: 123.45,
+      submissionDate: new Date('2024-08-15'),
+      receipt: 'receipt1.pdf',
+      pendingApprovals: "Pending",
+      comments: ''
+    },
+    {
+      empName: 'Jane Smith',
+      expenseType: 'Bills',
+      amount: 67.89,
+      submissionDate: new Date('2024-08-16'),
+      receipt: 'receipt2.pdf',
+      pendingApprovals: "Pending",
+      comments: ''
+    },
+    {
+      empName: 'Bob Johnson',
+      expenseType: 'Team Activities',
+      amount: 34.56,
+      submissionDate: new Date('2024-08-17'),
+      receipt: 'receipt3.pdf',
+      pendingApprovals: "Pending",
+      comments: ''
+    }
+  ];
+
+  // Simulate HTTP delay and return dummy table data
+  return of(dummyData).pipe(delay(1000));
+}
 }

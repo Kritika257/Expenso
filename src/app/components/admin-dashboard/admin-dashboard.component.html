@@ -61,6 +61,7 @@
                   <thead>
                       <tr>
                           <th>Employee Name</th>
+                          <th>Expense Type</th>
                           <th>Submission Date</th>
                           <th>Amount</th>
                           <th>Status</th>
@@ -69,6 +70,7 @@
                   <tbody>
                     <tr *ngFor="let employee of tableData">
                       <td class="name">{{ employee.employeeName }}</td>
+                      <td class="new-column">{{ employee.expenseType }}</td>
                       <td class="date">{{ employee.submissionDate | date:'MMM d, y' }}</td>
                       <td class="amount">{{ employee.amount | number:'1.2-2' }}</td>
                       <td class="status">{{ employee.status }}</td>

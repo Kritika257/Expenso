@@ -4,6 +4,7 @@ import { ChartData, ChartOptions } from 'chart.js';
 import { Chart, registerables} from 'chart.js';
 import { DashboardService } from '../../services/dashboard.service'; 
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 
 Chart.register(...registerables)
@@ -13,7 +14,7 @@ Chart.register(...registerables)
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [BaseChartDirective, CommonModule ],
+  imports: [BaseChartDirective, CommonModule, FormsModule  ],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css'
 })
@@ -92,7 +93,7 @@ export class DashboardComponent implements OnInit {
   }
 };
 
-  tableData: Array<{ expenseType: string, amount: number, expenses: number, pendingApprovals: number }> = [];
+tableData: Array<{ empName: string, expenseType: string, amount: number, submissionDate: Date, receipt: string, pendingApprovals: number, comments: string }> = [];
 
   usedBudget: number = 0;
   recentExpenses: number = 0;
@@ -118,17 +119,41 @@ export class DashboardComponent implements OnInit {
 
       // Apply styles for bar chart
       this.data2.datasets.forEach(dataset => {
-        if (dataset.label === 'Travel') dataset.backgroundColor = "#10c4b5";
-        if (dataset.label === 'Team Activities') dataset.backgroundColor = "#005562";
-        if (dataset.label === 'Professional Development') dataset.backgroundColor = "#0e8174";
-        if (dataset.label === 'Bills') dataset.backgroundColor = "#6eba8c";
+        switch (dataset.label) {
+          case 'Travel':
+            dataset.backgroundColor = "#10c4b5";
+            break;
+          case 'Team Activities':
+            dataset.backgroundColor = "#005562";
+            break;
+          case 'Professional Development':
+            dataset.backgroundColor = "#0e8174";
+            break;
+          case 'Bills':
+            dataset.backgroundColor = "#6eba8c";
+            break;
+        }
       });
-      
-    });
 
-    
+      this.dashboardService.getTableData().subscribe(data => {
+        this.tableData = data;
+      });
+    });
   }
-}
+      approveItem(item: any) {
+        // Simply mark the item as approved
+        item.pendingApprovals = Math.max(item.pendingApprovals - 1, 0);
+        console.log('Item approved:', item);
+      }
+
+      rejectItem(item: any) {
+        // Simply mark the item as rejected
+        item.pendingApprovals = Math.max(item.pendingApprovals - 1, 0);
+        console.log('Item rejected:', item);
+      }
+    }
+  
+
 
 
     /*data2: ChartData<'bar'> = {
@@ -196,4 +221,3 @@ export class DashboardComponent implements OnInit {
       }
   }
       */
-

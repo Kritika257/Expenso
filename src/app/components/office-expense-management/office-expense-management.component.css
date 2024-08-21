@@ -27,7 +27,7 @@
   .select{
     display: flex;
     gap: 10px; /* Space between buttons */
-  margin-bottom: 5px;
+    margin-bottom: 15px;
   }
 
   .pagination-controls {
@@ -78,7 +78,7 @@
   }
 
   .name{
-    text-align: center;
+    text-align: left;
   }
   
   .amount{

@@ -21,7 +21,7 @@ export class ReportService {
 
     const dummyExpenses: Expense[] = [
       { empId: 1, expenseType: 'Travel', receipt: null, amount: 150, status: 'Admin Approved' },
-      { empId: 2, expenseType: 'Office Supplies', receipt: 'receipt1.pdf', amount: 75, status: 'Completed' },
+      { empId: 2, expenseType: 'Team Activities', receipt: 'receipt1.pdf', amount: 75, status: 'Completed' },
       { empId: 3, expenseType: 'Meals', receipt: null, amount: 50, status: 'Manager Rejected' }
     ];
 
