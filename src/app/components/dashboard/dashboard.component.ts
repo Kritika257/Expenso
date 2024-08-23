@@ -155,6 +155,18 @@ tableData: Array<{ empName: string, expenseType: string, amount: number, submiss
         item.pendingApprovals = Math.max(item.pendingApprovals - 1, 0);
         console.log('Item rejected:', item);
       }
+    
+      approveSelected() {
+        const selectedItems = this.tableData.filter(item => item.selected);
+        selectedItems.forEach(item => this.approveItem(item));
+        
+      }
+      // Method to reject selected items
+      rejectSelected() {
+        const selectedItems = this.tableData.filter(item => item.selected);
+        selectedItems.forEach(item => this.rejectItem(item));
+        
+      }
     }
   
 

@@ -52,7 +52,7 @@ export class OfficeExpenseManagementComponent implements OnInit {
   approveSelected() {
     const selectedItems = this.data.filter(item => item.selected);
     selectedItems.forEach(item => this.approve(item));
-    // Optionally send all selected approvals to the backend in a batch
+    
   }
 
   reject(data: any) {
@@ -75,7 +75,7 @@ export class OfficeExpenseManagementComponent implements OnInit {
   rejectSelected() {
     const selectedItems = this.data.filter(item => item.selected);
     selectedItems.forEach(item => this.reject(item));
-    // Optionally send all selected rejections to the backend in a batch
+    
   }
 }
 
