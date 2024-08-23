@@ -31,7 +31,8 @@
                     <td class="date">{{ data.submissionDate | date:'MMM d, y' }}</td>
                     <td class="data">{{ data.expenseType }}</td>
                     <td class="amount">{{ data.amount | number:'1.2-2' }}</td>
-                    <td class="data">{{ data.receipt }}</td>
+                    <td class="receipt"><a *ngIf="data.receipt" [href]="data.receipt" target="_blank">View</a>
+                      <span *ngIf="!data.receipt">No Receipt</span></td>
                     <td>
                       <div class="buttons-container">
                       <button (click)="approve(data)">Approve</button>

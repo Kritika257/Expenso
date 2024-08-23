@@ -93,7 +93,7 @@ export class DashboardComponent implements OnInit {
   }
 };
 
-tableData: Array<{ empName: string, expenseType: string, amount: number, submissionDate: Date, receipt: string, pendingApprovals: number, comments: string }> = [];
+tableData: Array<{ empName: string, expenseType: string, amount: number, submissionDate: Date, receipt: string, pendingApprovals: number, comments: string, selected: boolean }> = [];
 
   usedBudget: number = 0;
   recentExpenses: number = 0;
@@ -140,8 +140,12 @@ tableData: Array<{ empName: string, expenseType: string, amount: number, submiss
       });
     });
   }
+
+  SelectAll(event: any) {
+    const checked = event.target.checked;
+    this.tableData.forEach(item => item.selected = checked);
+  }
       approveItem(item: any) {
-        // Simply mark the item as approved
         item.pendingApprovals = Math.max(item.pendingApprovals - 1, 0);
         console.log('Item approved:', item);
       }

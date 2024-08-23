@@ -68,7 +68,8 @@ getTableData(): Observable<any[]> {
       submissionDate: new Date('2024-08-15'),
       receipt: 'receipt1.pdf',
       pendingApprovals: "Pending",
-      comments: ''
+      comments: '',
+      selected: false // Add selected property here
     },
     {
       empName: 'Jane Smith',
@@ -77,7 +78,8 @@ getTableData(): Observable<any[]> {
       submissionDate: new Date('2024-08-16'),
       receipt: 'receipt2.pdf',
       pendingApprovals: "Pending",
-      comments: ''
+      comments: '',
+      selected: false // Add selected property here
     },
     {
       empName: 'Bob Johnson',
@@ -86,7 +88,8 @@ getTableData(): Observable<any[]> {
       submissionDate: new Date('2024-08-17'),
       receipt: 'receipt3.pdf',
       pendingApprovals: "Pending",
-      comments: ''
+      comments: '',
+      selected: false // Add selected property here
     }
   ];
 
